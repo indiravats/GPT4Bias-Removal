@@ -10,10 +10,6 @@ By leveraging a dataset of tailored political prompts and systematically testing
 More details for our results can be found [here](Paper.pdf). The code for our analysis is available [here](analysis).
 
 # RAG-Based Removal
-<<<<<<< HEAD
-## Pre-requisites 
-## Steps to run
-=======
 ## Pipeline
 ### Data Preprocessing:
 All comments from a given thread are aggregated into a single tuple to ensure cohesive tokenization. Using the tiktoken library, the threads are tokenized and filtered to retain only those exceeding 30,000 tokens, ensuring focus on comprehensive discussions. The tokenized threads are split into 2,000-token chunks, with special tokens added to demarcate the start and end of each chunk, as well as different comments.
@@ -26,4 +22,3 @@ Retrieved chunks are concatenated to form a context string, which is fed as exte
 
 ## Results
 We saw a notable change in the responses recieved by GPT-4 post our RAG-based context was provided. Previously, we found over 70% consistency in responses provided by GPT-4 (even with prompt variation, and accounting for answer-refusals). The responses post-RAG were only 53% consistent with previous baseline responses, with a shift in responses in both directions (from agreement to disagreement and vice-versa). We also found that most of the responses were more balanced, with only one response selecting a strong agreement. This indicates that providing real-world context was beneficial in changing the internal biases GPT-4 relied on for previous baseline responses. 
->>>>>>> bbb0c0c (final updates)
